@@ -4,8 +4,6 @@ import socket
 import subprocess
 import time
 import ssl
-from encryption_scripts import Encryption_Object, knapsack_publicKey_gen
-
 
 class Server:
     def __init__(self, IP, cert_file, key_file):
@@ -81,7 +79,6 @@ client_socket, client_addr = server.go_online()
 client = Client(client_socket, client_addr)
 remote_dir_active = False
 sep = ":"
-
 
 
 while True:
