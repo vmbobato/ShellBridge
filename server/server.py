@@ -24,7 +24,6 @@ class Server:
         client_socket, client_addr = self.server_s.accept()
         self.secure_conn = self.ssl_context.wrap_socket(client_socket, server_side=True, do_handshake_on_connect=True)
         msg = self.secure_conn.recv(1024 * 60).decode()
-        print("MESSAGE::::::::::", msg)
         self.secure_conn.sendall(os.getcwd().encode())
         return client_socket, client_addr
 
